@@ -44,6 +44,48 @@ class Program
     }
 }
 
+ //OR
+using System;
+
+class SmartMeter
+{
+    public int MeterId { get; set; }
+    public string CustomerName { get; set; }
+}
+
+class ResidentialMeter : SmartMeter
+{
+    public string HouseType { get; set; }
+
+    public void PrintDetails()
+    {
+        Console.WriteLine($"Residential Meter -> ID: {MeterId}, Name: {CustomerName}, HouseType: {HouseType}");
+    }
+}
+
+class CommercialMeter : SmartMeter
+{
+    public string BusinessType { get; set; }
+
+    public void PrintDetails()
+    {
+        Console.WriteLine($"Commercial Meter -> ID: {MeterId}, Name: {CustomerName}, BusinessType: {BusinessType}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        ResidentialMeter r = new ResidentialMeter { MeterId = 201, CustomerName = "Alice", HouseType = "Apartment" };
+        CommercialMeter c = new CommercialMeter { MeterId = 301, CustomerName = "Bob", BusinessType = "Shop" };
+
+        r.PrintDetails();
+        c.PrintDetails();
+    }
+}
+
+
 
 
 
@@ -133,3 +175,4 @@ class Program
         com.CalculateBill();
     }
 }
+
