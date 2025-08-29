@@ -130,7 +130,7 @@ class Meter
     public void AddReading(Reading r)
     {
         readings.Add(r);
-        OnNewReading?.Invoke(r);  // Event Trigger
+        OnNewReading?.Invoke(r);  
     }
 
     public class ReadingHistory
@@ -171,3 +171,4 @@ class Program
         Console.WriteLine("Bill Generated: Rs. " + bill);
     }
 }
+
